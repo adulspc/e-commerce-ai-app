@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f1e8;
+  --surface: #faf9f4;
+  --surface-soft: #eef0e3;
+  --primary: #8a9a5b;
+  --primary-dark: #667344;
+  --primary-light: #b8c39b;
+  --text-primary: #30352c;
+  --text-secondary: #74796b;
+  --border: #d9ddcb;
+  --success: #6f8754;
+  --warning: #c49a5a;
+  --danger: #a96458;
+}
+
+@theme inline {
+  --color-cream: #f4f1e8;
+  --color-ivory: #faf9f4;
+  --color-foam: #eef0e3;
+  --color-pea: #8a9a5b;
+  --color-pea-deep: #667344;
+  --color-pea-hover: #56633a;
+  --color-moss: #465238;
+  --color-ink: #30352c;
+  --color-muted: #74796b;
+  --color-line: #d9ddcb;
+  --color-sage: #b8c39b;
+  --color-earth: #766b59;
+  --color-success: #6f8754;
+  --color-warning: #c49a5a;
+  --color-danger: #a96458;
+  --color-skeleton: #e4e6d8;
+  --color-row: #f0f2e7;
+  --font-sans: var(--font-dm), var(--font-thai), ui-sans-serif, sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border border-line bg-ivory shadow-[0_8px_24px_rgba(70,82,56,0.05)];
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-pea-deep px-4 py-2 text-sm text-white transition duration-200 hover:bg-pea-hover disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-line bg-foam px-3 py-1.5 text-sm text-moss transition duration-200 hover:bg-sage/40 disabled:opacity-50;
+  }
+
+  .alert-danger {
+    @apply rounded-xl border border-danger/30 bg-danger/10 px-4 py-3 text-sm text-danger;
+  }
+
+  .alert-warn {
+    @apply rounded-xl border border-warning/40 bg-warning/15 px-4 py-3 text-sm text-earth;
+  }
+
+  .alert-ok {
+    @apply rounded-xl border border-success/30 bg-success/10 px-4 py-3 text-sm text-moss;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-line bg-ivory px-3 py-2 text-sm text-ink outline-none transition duration-200 focus:border-pea focus:ring-4 focus:ring-pea/20;
+  }
+
+  .skeleton {
+    @apply animate-pulse rounded-2xl bg-skeleton;
+  }
+}
+
+body {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(180deg, rgba(244, 241, 232, 0.96), rgba(238, 240, 227, 0.96)),
+    radial-gradient(circle at 20% 10%, rgba(184, 195, 155, 0.18), transparent 32%);
+  color: var(--text-primary);
+  font-family: var(--font-sans), sans-serif;
+}
+
+.grain {
+  background-image: radial-gradient(rgba(244, 241, 232, 0.08) 0.6px, transparent 0.6px);
+  background-size: 3px 3px;
+}
